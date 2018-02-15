@@ -1,7 +1,9 @@
 # use monthly summary
 # copy the data from the screen w/o year and month
 
-ts <- readClipboard(raw = FALSE)
+myvect = read.csv("PB monthly summaries.csv")
+
+ts <- ts(myvect, start=c(2017, 1), end = c(2000, 13), frequency = 12)
 
 ts1 <- read.table("clipboard", sep = "\t")
 ts1
