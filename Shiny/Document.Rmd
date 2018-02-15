@@ -1,6 +1,7 @@
 ---
 title: "BP Apprehensions by Sector in 2010 and 2017"
 author: "Kerin Grewal, Michael Rojas, Theresa McNeil"
+date: "Februrary, 2018"
 output: pdf_document
 ---
 
@@ -8,32 +9,223 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-##Big Bend Data
 ```{r, echo=FALSE}
 data2010 <- read.csv('BP Apprehensions 2010.csv')
 data2017 <- read.csv('PB Apprehensions 2017.csv')
 
 
+name =  c("October", "November", "December", "January", "February", "March", "April", "May", "June", "July", "August", "September")
+
+colrs = c("yellow", "blue")
+yrs = c("2010", "2017")
+```
+
+##Big Bend Data
+```{r, echo=FALSE}
 colu = as.numeric('1')
 d1 = as.data.frame(data2010[c(colu),])
-show(d1)
-#colnames(d1) <- c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
 d2 = as.data.frame(data2017[c(colu),])
-show(d2)
-#colnames(d2) <- c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
 
 mydata <- rbind(d1, d2)
 mydata$Sector <- NULL
-rownames(mydata) <- c("2010", "2017")
+rownames(mydata) <- yrs
 mydata
 
 barplot(as.matrix(mydata), 
         beside = TRUE,
+        main = "Big Bend Boarder Patrol Apprehensions in 2010 and 2017",
         xlab = "Months",
         ylab = "Apprehensions",
-        names.arg = c("October", "November", "December", "January", "February", "March", "April", "May", "June", "July", "August", "September"),
-        col = c("yellow", "blue"), 
+        names.arg = name,
+        col = colrs, 
         bty="n" )
         legend("topright", c("2010","2017"), pch=15,  col=c("yellow","blue"),  bty="n")
+
+```
+##Del Rio Data
+```{r, echo=FALSE}
+colu = as.numeric('2')
+d1 = as.data.frame(data2010[c(colu),])
+
+d2 = as.data.frame(data2017[c(colu),])
+
+mydata <- rbind(d1, d2)
+mydata$Sector <- NULL
+rownames(mydata) <- yrs
+mydata
+
+barplot(as.matrix(mydata), 
+        beside = TRUE,
+        main = "Del Rio Boarder Patrol Apprehensions in 2010 and 2017",
+        xlab = "Months",
+        ylab = "Apprehensions",
+        names.arg = name,
+        col = colrs, 
+        bty="n" )
+        legend("topright", yrs, pch=15,  col=c("yellow","blue"),  bty="n")
+
+```
+
+##El Centro Data
+```{r, echo=FALSE}
+colu = as.numeric('3')
+d1 = as.data.frame(data2010[c(colu),])
+
+d2 = as.data.frame(data2017[c(colu),])
+
+mydata <- rbind(d1, d2)
+mydata$Sector <- NULL
+rownames(mydata) <- yrs
+mydata
+
+barplot(as.matrix(mydata), 
+        beside = TRUE,
+        main = "El Centro Boarder Patrol Apprehensions in 2010 and 2017",
+        xlab = "Months",
+        ylab = "Apprehensions",
+        names.arg = name,
+        col = colrs, 
+        bty="n" )
+        legend("topright", yrs, pch=15,  col=c("yellow","blue"),  bty="n")
+
+```
+
+##El Paso Data
+```{r, echo=FALSE}
+colu = as.numeric('4')
+d1 = as.data.frame(data2010[c(colu),])
+
+d2 = as.data.frame(data2017[c(colu),])
+
+mydata <- rbind(d1, d2)
+mydata$Sector <- NULL
+rownames(mydata) <- yrs
+mydata
+
+barplot(as.matrix(mydata), 
+        beside = TRUE,
+        main = "El Paso Boarder Patrol Apprehensions in 2010 and 2017",
+        xlab = "Months",
+        ylab = "Apprehensions",
+        names.arg = name,
+        col = colrs, 
+        bty="n" )
+        legend("topright", yrs, pch=15,  col=c("yellow","blue"),  bty="n")
+
+```
+
+##Laredo Data
+```{r, echo=FALSE}
+colu = as.numeric('5')
+d1 = as.data.frame(data2010[c(colu),])
+d2 = as.data.frame(data2017[c(colu),])
+
+mydata <- rbind(d1, d2)
+mydata$Sector <- NULL
+rownames(mydata) <- yrs
+mydata
+
+barplot(as.matrix(mydata), 
+        beside = TRUE,
+        main = "Laredo Boarder Patrol Apprehensions in 2010 and 2017",
+        xlab = "Months",
+        ylab = "Apprehensions",
+        names.arg = name,
+        col = colrs, 
+        bty="n" )
+        legend("topright", yrs, pch=15,  col=c("yellow","blue"),  bty="n")
+
+```
+
+##Rio Grande Valley Data
+```{r, echo=FALSE}
+colu = as.numeric('6')
+d1 = as.data.frame(data2010[c(colu),])
+d2 = as.data.frame(data2017[c(colu),])
+
+mydata <- rbind(d1, d2)
+mydata$Sector <- NULL
+rownames(mydata) <- yrs
+mydata
+
+barplot(as.matrix(mydata), 
+        beside = TRUE,
+        main = "Rio Grande Valley Boarder Patrol Apprehensions in 2010 and 2017",
+        xlab = "Months",
+        ylab = "Apprehensions",
+        names.arg = name,
+        col = colrs, 
+        bty="n" )
+        legend("topright", yrs, pch=15,  col=c("yellow","blue"),  bty="n")
+
+```
+
+##San Diego Data
+```{r, echo=FALSE}
+colu = as.numeric('7')
+d1 = as.data.frame(data2010[c(colu),])
+d2 = as.data.frame(data2017[c(colu),])
+
+mydata <- rbind(d1, d2)
+mydata$Sector <- NULL
+rownames(mydata) <- yrs
+mydata
+
+barplot(as.matrix(mydata), 
+        beside = TRUE,
+        main = "San Diego Boarder Patrol Apprehensions in 2010 and 2017",
+        xlab = "Months",
+        ylab = "Apprehensions",
+        names.arg = name,
+        col = colrs, 
+        bty="n" )
+        legend("topright", yrs, pch=15,  col=c("yellow","blue"),  bty="n")
+
+```
+
+##Tuscon Data
+```{r, echo=FALSE}
+colu = as.numeric('8')
+d1 = as.data.frame(data2010[c(colu),])
+d2 = as.data.frame(data2017[c(colu),])
+
+mydata <- rbind(d1, d2)
+mydata$Sector <- NULL
+rownames(mydata) <- yrs
+mydata
+
+barplot(as.matrix(mydata), 
+        beside = TRUE,
+        main = "Tuscon Boarder Patrol Apprehensions in 2010 and 2017",
+        xlab = "Months",
+        ylab = "Apprehensions",
+        names.arg = name,
+        col = colrs, 
+        bty="n" )
+        legend("topright", yrs, pch=15,  col=c("yellow","blue"),  bty="n")
+
+```
+
+##Yuma Data
+```{r, echo=FALSE}
+colu = as.numeric('9')
+d1 = as.data.frame(data2010[c(colu),])
+d2 = as.data.frame(data2017[c(colu),])
+
+mydata <- rbind(d1, d2)
+mydata$Sector <- NULL
+rownames(mydata) <- yrs
+mydata
+
+barplot(as.matrix(mydata), 
+        beside = TRUE,
+        main = "Yuma Boarder Patrol Apprehensions in 2010 and 2017",
+        xlab = "Months",
+        ylab = "Apprehensions",
+        names.arg = name,
+        col = colrs, 
+        bty="n" )
+        legend("topright", yrs, pch=15,  col=c("yellow","blue"),  bty="n")
 
 ```
